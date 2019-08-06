@@ -1,0 +1,16 @@
+<launch>
+
+  <arg name="port" default="/dev/ttyUSB0" />
+  <arg name="baud" default="19200" />
+  <arg name="node_name" default="serial_node" />
+  <arg name="read_topic" default="serial/read" />
+  <arg name="write_topic" default="serial/write" />
+
+  <node pkg="serial_ros_comm" type="rw_serial.py" name="$(arg node_name)" output="screen">
+    <param name="port" value="$(arg port)" />
+    <param name="baud" value="$(arg baud)" />
+    <!-- <param name="node_name" value="$(arg node_name)" /> -->
+    <remap from="read" to="$(arg read_topic)" />
+    <remap from="write" to="$(arg write_topic)" />
+  </node>
+</launch>

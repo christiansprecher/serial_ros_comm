@@ -1,0 +1,17 @@
+<launch>
+
+  <arg name="port" default="/dev/ttyUSB0" />
+  <arg name="baud" default="19200" />
+  <arg name="node_name" default="serial_sensor" />
+  <arg name="read_topic" default="serial/read" />
+  <arg name="write_topic" default="serial/write" />
+
+  <include file="$(find serial_ros_comm)/launch/serial_single.launch">
+    <arg name="port" value="$(arg port)" />
+    <arg name="baud" value="$(arg baud)" />
+    <arg name="node_name" value="$(arg node_name)" />
+    <arg name="read_topic" value="$(arg read_topic)" />
+    <arg name="write_topic" value="$(arg write_topic)" />
+  </include>
+
+</launch>
