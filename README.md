@@ -19,12 +19,3 @@ roslaunch serial_ros_comm serial_communication.launch
 ```
 Optional parameters: `port1`, `port2`, `baud`, `node_name1`, `node_name2`, `read_topic1`, `read_topic2`
 
-### Out of the box solution for connecting a sensor via NUC:
-Connect the ROS Master of your PC with the one on the NUC with node_manager. Start the sensor node on the __NUC__:
-```
-roslaunch serial_ros_comm serial_sensor.launch
-```
-Start the plattform node on __your computer__:
-```
-roslaunch serial_ros_comm serial_plattform.launch
-```
